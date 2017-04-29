@@ -6,11 +6,11 @@ body {
 
 header {
   display: block;
-  height: 5vh;
+  height: 10vh;
   overflow: auto;
   background-color: black;
   color: red;
-  font-size: 28px
+  font-size: 12px
 }
 
 .container {
