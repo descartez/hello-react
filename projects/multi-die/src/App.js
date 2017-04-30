@@ -5,25 +5,25 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Die />
+        <DiceCup />
       </div>
       );
   }
 }
 
 class Die extends Component {
-  randomFace = (sides) => {
-    let min = Math.ceil(0);
-    let max = Math.floor(sides);
-    return (Math.floor(Math.random() * (max - min)) + min)+1;
-  }
-
   constructor(props) {
     super(props);
     this.state = {
       dieFace: 'roll',
-      dieSides: 6
+      dieSides: props.dieSides
     }
+  }
+
+  randomFace = (sides) => {
+    let min = Math.ceil(0);
+    let max = Math.floor(sides);
+    return (Math.floor(Math.random() * (max - min)) + min)+1;
   }
 
   update() {
@@ -31,11 +31,36 @@ class Die extends Component {
   }
 
   render() {
+    let dieSides = this.state.dieSides
+    let dieFace = this.state.dieFace
     return (
-      <div>
-        <button onClick={this.update.bind(this)}>{this.state.dieFace}</button>
+      <div className={`die d${dieSides}`}>
+        <h1>{dieFace}</h1>
+        <button onClick={this.update.bind(this)}>roll d{dieSides}</button>
       </div>
       )
+  }
+}
+
+class DiceCup extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dice: [4,6,8,10,20]
+    }
+  }
+
+  render() {
+    let dice = this.state.dice
+    return (
+      <div className="dice-cup">
+        {
+          dice.map(die =>
+            <Die key={`d${die}`} dieSides={die}/>
+            )
+        }
+      </div>
+    )
   }
 }
 
