@@ -53,12 +53,16 @@ class DiceCup extends Component {
   render() {
     let dice = this.state.dice
     return (
-      <div className="dice-cup">
+      <div id="dice-cup">
+      <ul>
         {
           dice.map(die =>
-            <Die key={`d${die}`} dieSides={die}/>
+            <li key={`d${die}`}>
+              <Die dieSides={die}/>
+            </li>
             )
         }
+      </ul>
       </div>
     )
   }
