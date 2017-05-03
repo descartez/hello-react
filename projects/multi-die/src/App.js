@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <DiceCup />
+      <DiceCup />
       </div>
       );
   }
@@ -35,8 +35,8 @@ class Die extends Component {
     let dieFace = this.state.dieFace
     return (
       <div className={`die d${dieSides}`}>
-        <h1>{dieFace}</h1>
-        <button onClick={this.update.bind(this)}>roll d{dieSides}</button>
+      <h1>{dieFace}</h1>
+      <button onClick={this.update.bind(this)}>roll d{dieSides}</button>
       </div>
       )
   }
@@ -55,16 +55,18 @@ class DiceCup extends Component {
     return (
       <div id="dice-cup">
       <ul>
-        {
-          dice.map(die =>
-            <li key={`d${die}`}>
+      {
+        dice.map(die => {
+          return (
+            <li key={`d${die}_${index}`}>
               <Die dieSides={die}/>
             </li>
-            )
-        }
+            );
+          })
+      }
       </ul>
       </div>
-    )
+      )
   }
 }
 
