@@ -1,3 +1,7 @@
+.container {
+  padding: 20px;
+}
+
 #dice-cup {
   list-style-type: none;
 }
@@ -6,6 +10,7 @@
   display: inline-block;
   float: left;
   border: 2px gray solid;
+  border-radius: 20px;
   padding: 5px;
   margin: 5px;
   width: 10%;
@@ -17,6 +22,11 @@
   font-size: 0.7em;
 }
 
-#add-die {
+#die-adder button {
   font-size: 0.7em;
+}
+
+#die-adder input {
+  width: 25px;
+  font-size: 1em;
 }
