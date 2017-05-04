@@ -1,4 +1,4 @@
-#dice-cup ul {
+#dice-cup {
   list-style-type: none;
 }
 
@@ -8,11 +8,15 @@
   border: 2px gray solid;
   padding: 5px;
   margin: 5px;
-  width: 30%;
-  font-size: 2em;
+  width: 10%;
+  font-size: .7em;
   text-align: center;
 }
 
 .die button {
-  font-size: 1em;
+  font-size: 0.7em;
+}
+
+#add-die {
+  font-size: 0.7em;
 }

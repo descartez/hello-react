@@ -46,17 +46,28 @@ class DiceCup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dice: [4,6,8,10,20]
+      dice: [4,6,8,10,20,100]
     }
+  }
+
+  addDie = (sides) => {
+    let diceSet = this.state.dice
+    diceSet.push(sides)
+    this.setState({dice: diceSet})
+  }
+
+  update() {
+    this.addDie(6)
   }
 
   render() {
     let dice = this.state.dice
     return (
-      <div id="dice-cup">
-      <ul>
+      <div>
+      <button id='add-die' onClick={this.update.bind(this)}>Add d6</button>
+      <ul id="dice-cup">
       {
-        dice.map(die => {
+        dice.map((die, index) => {
           return (
             <li key={`d${die}_${index}`}>
               <Die dieSides={die}/>
@@ -65,6 +76,7 @@ class DiceCup extends Component {
           })
       }
       </ul>
+
       </div>
       )
   }
