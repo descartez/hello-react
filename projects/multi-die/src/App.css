@@ -30,3 +30,10 @@
   width: 25px;
   font-size: 1em;
 }
+
+.remove-die {
+  font-size: 1em;
+  background-color: red;
+  border: 0px;
+  border-radius: 15px;
+}
