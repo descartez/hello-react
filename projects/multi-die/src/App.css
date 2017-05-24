@@ -7,7 +7,7 @@
 }
 
 .die {
-  display: inline-block;
+  display: block;
   float: left;
   border: 2px gray solid;
   border-radius: 20px;
@@ -27,7 +27,7 @@
 }
 
 #die-adder input {
-  width: 25px;
+  width: 50px;
   font-size: 1em;
 }
 

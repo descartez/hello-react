@@ -5,7 +5,10 @@ class App extends Component {
   render() {
     return (
       <div>
-      <DiceCup />
+        <div className='container'>
+          <h1>YET ANOTHER DICE ROLLER</h1>
+          <DiceCup />
+        </div>
       </div>
       );
   }
@@ -15,7 +18,7 @@ class Die extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dieFace: 'roll',
+      dieFace: 0,
       dieSides: props.dieSides
     }
   }
@@ -69,12 +72,10 @@ class DiceCup extends Component {
   render() {
     let dice = this.state.dice
     return (
-      <div className='container'>
       <div id='die-adder'>
-        <h4>Specify number of die faces</h4>
+        <h4>Specify number of die faces, then you are good to go. </h4>
         <input type='number' value={this.state.nextAddDieSides} onChange={event => this.setState({ nextAddDieSides: event.target.value })} />
         <button id='add-die' onClick={() => {this.addDie(this.state.nextAddDieSides)}}>Add Dice</button>
-      </div>
       <ul id="dice-cup">
       {
         dice.map((die, index) => {
